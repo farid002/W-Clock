@@ -472,5 +472,41 @@ namespace WClock
             if (satList.Count >= 3) satApp_listbox.Items.Add("...more...");
             if (sunList.Count >= 3) sunApp_listbox.Items.Add("...more...");
         }
+
+        private void OptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            OptionsBorder.Visibility = Visibility.Visible;
+            
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Blue_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Red_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Green_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Fenerbahce_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Apply_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
