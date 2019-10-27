@@ -5,8 +5,384 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WClock"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="600" Width="600" AllowsTransparency="True" WindowStyle="None" Background="Transparent" Loaded="Window_Loaded">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="10" CornerRadius="360" GlassFrameThickness="3.2,150,3.2,3.2" ResizeBorderThickness="2,3.2,3.2,3.2" FrameworkElement.FlowDirection="LeftToRight" UseAeroCaptionButtons="True"></WindowChrome>
+    </WindowChrome.WindowChrome>
+
+    <Grid Width="600" Height="600">
+        <Border CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="0.5,0.5">
+            <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="5" Background="#FF110D38">
+                <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="70" Background="#FF0E3369">
+                    <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="50" Background="#FF110D38">
+                        <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="110" Background="#FF110D38"/>
+                    </Border>
+                </Border>
+            </Border>
+        </Border>
+        <Line
+                                X1="358" Y1="300"  
+                                X2="600" Y2="300"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" Margin="-1,0,1,0" />
+        <Line
+                                X1="340" Y1="262"  
+                                X2="490" Y2="70"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" />
+        <Line
+                                X1="290" Y1="245"  
+                                X2="240" Y2="10"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" Margin="0,-1,0,1" />
+        <Line
+                                X1="248" Y1="275"  
+                                X2="30" Y2="170"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" Margin="1,1,-1,-1" />
+        <Line
+                                X1="248" Y1="325"  
+                                X2="30" Y2="420"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" Margin="0,-1,0,1" />
+        <Line
+                                X1="286" Y1="355"  
+                                X2="230" Y2="580"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" />
+        <Line
+                                X1="335" Y1="345"  
+                                X2="480" Y2="540"  
+                                Stroke="Aqua"  
+                                StrokeThickness="2" />
+        <Line
+                                Name="mon_Line"
+                                X1="300" Y1="300"  
+                                X2="330" Y2="185"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="16,-54,-16,54" Visibility="Hidden" />
+        <Line
+                                Name="tue_Line"
+                                X1="300" Y1="300"  
+                                X2="412" Y2="248"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="53,-21,-53,21" Visibility="Hidden" />
+        <Line
+                                Name="wed_Line"
+                                X1="300" Y1="300"  
+                                X2="408" Y2="355"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="53,24,-53,-24" Visibility="Hidden" />
+        <Line
+                                Name="thu_Line"
+                                X1="300" Y1="300"  
+                                X2="325" Y2="417"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="10,57,-10,-57" Visibility="Hidden" />
+        <Line
+                                Name="fri_Line"
+                                X1="300" Y1="300"  
+                                X2="225" Y2="395"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="-37,44,37,-44" Visibility="Hidden" />
+        <Line
+                                Name="sat_Line"
+                                X1="300" Y1="300"  
+                                X2="180" Y2="300"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="-57,-1,57,1" Visibility="Hidden" />
+        <Line
+                                Name="sun_Line"
+                                X1="300" Y1="300"  
+                                X2="225" Y2="205"  
+                                Stroke="Red"  
+                                StrokeThickness="4" Margin="-37,-43,37,43" Visibility="Hidden" />
+        <Label x:Name="CurrentTime_Label" Margin="258,268,255,302" Foreground="White" Background="#FF110D38" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="16:00:54" Height="40" FontSize="20"/>
+        <Image x:Name="CurrWeather_Image" Margin="305,298,255,262" Width="40" Height="40" RenderTransformOrigin="0.26,0.285"/>
+        <Label Margin="127,432,373,138" Width="100" Height="40" Content="FRI" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="40"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Margin="128,137,372,433" Width="100" Height="40" Content="SUN" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-40"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Margin="58,281,442,289" Width="100" Height="40" Content="SAT" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-85"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Margin="289,474,211,96" Width="100" Height="40" Content="THU" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-10"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Margin="423,371,77,199" Width="100" Height="40" Content="WED" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-60"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Margin="302,101,198,469" Width="100" Height="40" Content="MON" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="15"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Margin="425,204,75,366" Width="100" Height="40" Content="TUE" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="70"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="currWeather_Label" Height="35" BorderBrush="Transparent"  Margin="258,309,288,262" Background="Transparent" Foreground="White" FontSize="18"/>
+        <StackPanel>
+            <ListBox x:Name="monApp_listbox" HorizontalAlignment="Left" Height="65" Margin="291,20,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="14.468"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <ListBox x:Name="tueApp_listbox" HorizontalAlignment="Left" Height="82" Margin="445,70,-12,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="64.897"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <ListBox x:Name="wedApp_listbox" HorizontalAlignment="Left" Height="71" Margin="455,140,-1,0" VerticalAlignment="Top" Width="146" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-63.804"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <ListBox x:Name="thuApp_listbox" HorizontalAlignment="Left" Height="66" Margin="275,70,0,0" VerticalAlignment="Top" Width="142" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-11.569"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <ListBox x:Name="friApp_listbox" HorizontalAlignment="Left" Height="70" Margin="57,-175,0,0" VerticalAlignment="Center" Width="157" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="40.171"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <ListBox x:Name="satApp_listbox" HorizontalAlignment="Left" Height="86" Margin="-30,-320,0,0" VerticalAlignment="Top" Width="174" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-86.812"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+            <ListBox x:Name="sunApp_listbox" HorizontalAlignment="Left" Height="75" Margin="70,-515,0,0" VerticalAlignment="Top" Width="146" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-38.702"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+            </ListBox>
+        </StackPanel>
+        <Label x:Name="MonWeather_Label" Content="16'C" Margin="300,142,230,408" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="16.329"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="TueWeather_Label" Content="18'C" Margin="395,218,135,332" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="68.041"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="WedWeather_Label" Content="18'C" Margin="388,337,142,213" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-61.059"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="ThuWeather_Label" Content="18'C" Margin="291,408,239,142" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-12.413"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="FriWeather_Label" Content="18'C" Margin="180,378,350,172" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="40.58"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="SatWeather_Label" Content="18'C" Margin="129,273,401,277" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-85.335"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="SunWeather_Label" Content="18'C" Margin="180,166,350,384" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-41.449"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Image x:Name="MonWeather_Image" Margin="310,172,237,374" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="12.711"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="TueWeather_Image" Margin="410,224,137,322" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="66.99"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="SatWeather_Image" Margin="173,321,374,225" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-86.564"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="FriWeather_Image" Margin="244,332,303,214" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="41.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="ThuWeather_Image" Margin="290,370,257,176" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-10.282"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="WedWeather_Image" Margin="348,349,199,197" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-60.091"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="SunWeather_Image" Margin="204,212,343,334" RenderTransformOrigin="0,-0">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-39.431"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
+
 </Window>
