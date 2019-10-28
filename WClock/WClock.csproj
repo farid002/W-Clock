@@ -77,6 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MyCalendar.cs" />
     <Compile Include="WeatherInfo.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -153,12 +154,24 @@
   <ItemGroup>
     <Resource Include="imgs\weather-icons\cloudy.png" />
     <Resource Include="imgs\weather-icons\partly-cloudy-day.png" />
-    <Resource Include="imgs\weather-icons\lightning.png" />
-    <Resource Include="imgs\weather-icons\lightningrainy.png" />
-    <Resource Include="imgs\weather-icons\lowrainy.png" />
-    <Resource Include="imgs\weather-icons\rainy.png" />
-    <Resource Include="imgs\weather-icons\snowy.png" />
+    <Resource Include="imgs\weather-icons\rain.png" />
+    <Resource Include="imgs\weather-icons\snow.png" />
     <Resource Include="imgs\weather-icons\clear-day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\weather-icons\clear-night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\weather-icons\sleet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\weather-icons\wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\weather-icons\fog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\weather-icons\partly-cloudy-night.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

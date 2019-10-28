@@ -170,7 +170,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="currWeather_Label" Height="35" BorderBrush="Transparent"  Margin="258,309,288,262" Background="Transparent" Foreground="White" FontSize="18"/>
+        <Label x:Name="currWeather_Label" Height="35" BorderBrush="Transparent"  Margin="258,303,288,262" Background="Transparent" Foreground="White" FontSize="20"/>
         <StackPanel>
             <ListBox x:Name="monApp_listbox" HorizontalAlignment="Left" Height="65" Margin="291,20,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
                 <ListBox.RenderTransform>
@@ -243,7 +243,7 @@
                 </ListBox.RenderTransform>
             </ListBox>
         </StackPanel>
-        <Label x:Name="MonWeather_Label" Content="16'C" Margin="300,142,230,408" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="MonWeather_Label" Content="" Margin="283,142,214,408" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" MouseEnter="MonWeather_Label_MouseEnter">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -253,7 +253,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="TueWeather_Label" Content="18'C" Margin="395,218,135,332" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="TueWeather_Label" Content="" Margin="376,215,122,331" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" MouseEnter="TueWeather_Label_MouseEnter">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -263,7 +263,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="WedWeather_Label" Content="18'C" Margin="388,337,142,213" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="WedWeather_Label" Content="" Margin="371,343,117,215" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -273,7 +273,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="ThuWeather_Label" Content="18'C" Margin="291,408,239,142" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="ThuWeather_Label" Content="" Margin="273,420,220,142" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" MouseEnter="ThuWeather_Label_MouseEnter">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -283,7 +283,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="FriWeather_Label" Content="18'C" Margin="180,378,350,172" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="FriWeather_Label" Content="" Margin="158,389,339,169" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" MouseEnter="FriWeather_Label_MouseEnter">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -293,7 +293,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="SatWeather_Label" Content="18'C" Margin="129,273,401,277" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="SatWeather_Label" Content="" Margin="114,268,381,279" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" MouseEnter="SatWeather_Label_MouseEnter">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -303,7 +303,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="SunWeather_Label" Content="18'C" Margin="180,166,350,384" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="30">
+        <Label x:Name="SunWeather_Label" Content="" Margin="162,165,329,385" RenderTransformOrigin="0.5,0.5" Foreground="White" FontSize="20" HorizontalContentAlignment="Center" MouseEnter="SunWeather_Label_MouseEnter">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

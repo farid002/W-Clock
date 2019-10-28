@@ -55,7 +55,7 @@ namespace WClock
 
         public void getWeather()
         {
-            //MainWindow mainWindow = new MainWindow();
+            string weatherImagePath = "/imgs/weather-icons/";
 
             //new webClient
             using (WebClient web = new WebClient())
@@ -94,21 +94,266 @@ namespace WClock
                 DateTime day7 = new DateTime(1970, 1, 1, 0, 0, 0, 0);
                 day7 = day7.AddSeconds(weatherData.daily.data[6].time).ToLocalTime();
 
-                MainWindow.main.currWeather_Label.Content = weatherData.currently.temperature.ToString() + "'C";
-                //MainWindow.main.CurrWeather_Image = new BitmapImage(new Uri(@"/Images/foo.png", UriKind.Relative));
+                MainWindow.main.currWeather_Label.Content = ((int)weatherData.currently.temperature).ToString() + "°C";
+                MainWindow.main.CurrWeather_Image.Source = new BitmapImage(new Uri( weatherImagePath + weatherData.currently.icon + @".png", UriKind.Relative));
 
-                if (day1.DayOfWeek.ToString() == "Monday")
+                if (day1.DayOfWeek.ToString() == "Monday") //if today is monday
                 {
-                    /*mainWindow.MonWeather_Label.Content = "";
-                    mainWindow.MonWeather_Image.Source = null; //new BitmapImage(new Uri(@"/Images/foo.png", UriKind.Relative));
-                    mainWindow.currWeather_Label.Text = weatherData.currently.temperature.ToString() + "'C";*/
+                    //day2 is Tue
+                    MainWindow.main.TueWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / " 
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.TueWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+                    
+                    //day3 is Wed
+                    MainWindow.main.WedWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.WedWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
 
+                    //day4 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.ThuWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+                    //day5 is Fri
+                    MainWindow.main.FriWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.FriWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+                    //day6 is Sat
+                    MainWindow.main.SatWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.SatWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
+
+                    //day7 is Sun
+                    MainWindow.main.SunWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.SunWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
 
                 }
 
+                else if (day1.DayOfWeek.ToString() == "Tuesday") //if today is tuesday
+                {
+                    //day7 is Mon
+                    MainWindow.main.MonWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.MonWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
+
+                    //day1  is Tue
+                    MainWindow.main.TueWeather_Label.Content = "";
+                    MainWindow.main.TueWeather_Image.Source = null;
+
+                    //day2 is Wed
+                    MainWindow.main.WedWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.WedWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+
+                    //day3 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.ThuWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
+
+                    //day4 is Fri
+                    MainWindow.main.FriWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.FriWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+                    //day5 is Sat
+                    MainWindow.main.SatWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.SatWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+                    //day6 is Sun
+                    MainWindow.main.SunWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.SunWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
 
 
+                }
+                else if (day1.DayOfWeek.ToString() == "Wednesday") //if today is wed
+                {
+                    //day6 is Mon
+                    MainWindow.main.MonWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.MonWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
 
+                    //day7 is Tue
+                    MainWindow.main.TueWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.TueWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
+
+                    //day1 is Wed
+                    MainWindow.main.WedWeather_Label.Content = "";
+                    MainWindow.main.WedWeather_Image.Source = null;
+
+                    //day2 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.ThuWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+
+                    //day3 is Fri
+                    MainWindow.main.FriWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.FriWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
+
+                    //day4 is Sat
+                    MainWindow.main.SatWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.SatWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+                    //day5 is Sun
+                    MainWindow.main.SunWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.SunWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+
+                }
+                else if (day1.DayOfWeek.ToString() == "Thursday") //if today is thu
+                {
+                    //day5 is Mon
+                    MainWindow.main.MonWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.MonWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+                    //day6 is Tue
+                    MainWindow.main.TueWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.TueWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
+
+                    //day7 is Wed
+                    MainWindow.main.WedWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.WedWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
+
+                    //day1 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = "";
+                    MainWindow.main.ThuWeather_Image.Source = null;
+
+                    //day2 is Fri
+                    MainWindow.main.FriWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.FriWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+
+                    //day3 is Sat
+                    MainWindow.main.SatWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.SatWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
+
+                    //day4 is Sun
+                    MainWindow.main.SunWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.SunWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+
+                }
+                else if (day1.DayOfWeek.ToString() == "Friday") //if today is fri
+                {
+                    //day4 is Mon
+                    MainWindow.main.MonWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.MonWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+                    //day5 is Tue
+                    MainWindow.main.TueWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.TueWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+                    //day6 is Wed
+                    MainWindow.main.WedWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.WedWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
+
+                    //day7 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.ThuWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
+
+                    //day1 is Fri
+                    MainWindow.main.FriWeather_Label.Content = "";
+                    MainWindow.main.FriWeather_Image.Source = null;
+
+                    //day2 is Sat
+                    MainWindow.main.SatWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.SatWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+
+                    //day3 is Sun
+                    MainWindow.main.SunWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.SunWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
+                }
+
+                else if (day1.DayOfWeek.ToString() == "Saturday") //if today is sat
+                {
+                    //day3 is Mon
+                    MainWindow.main.MonWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.MonWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
+
+                    //day4 is Tue
+                    MainWindow.main.TueWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.TueWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+                    //day5 is Wed
+                    MainWindow.main.WedWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.WedWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+                    //day6 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.ThuWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
+
+                    //day7 is Fri
+                    MainWindow.main.FriWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.FriWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
+
+                    //day1 is Sat
+                    MainWindow.main.SatWeather_Label.Content = "";
+                    MainWindow.main.SatWeather_Image.Source = null;
+
+                    //day2 is Sun
+                    MainWindow.main.SunWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.SunWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+                }
+                else if (day1.DayOfWeek.ToString() == "Sunday") //if today is Sun
+                {
+                    //day2 is Mon
+                    MainWindow.main.MonWeather_Label.Content = ((int)weatherData.daily.data[1].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[1].temperatureMax).ToString() + "°";
+                    MainWindow.main.MonWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[1].icon + @".png", UriKind.Relative));
+
+                    //day3 is Tue
+                    MainWindow.main.TueWeather_Label.Content = ((int)weatherData.daily.data[2].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[2].temperatureMax).ToString() + "°";
+                    MainWindow.main.TueWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[2].icon + @".png", UriKind.Relative));
+
+                    //day4 is Wed
+                    MainWindow.main.WedWeather_Label.Content = ((int)weatherData.daily.data[3].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[3].temperatureMax).ToString() + "°";
+                    MainWindow.main.WedWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[3].icon + @".png", UriKind.Relative));
+
+                    //day5 is Thu
+                    MainWindow.main.ThuWeather_Label.Content = ((int)weatherData.daily.data[4].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[4].temperatureMax).ToString() + "°";
+                    MainWindow.main.ThuWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[4].icon + @".png", UriKind.Relative));
+
+                    //day6 is Fri
+                    MainWindow.main.FriWeather_Label.Content = ((int)weatherData.daily.data[5].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[5].temperatureMax).ToString() + "°";
+                    MainWindow.main.FriWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[5].icon + @".png", UriKind.Relative));
+
+                    //day7 is Sat
+                    MainWindow.main.SatWeather_Label.Content = ((int)weatherData.daily.data[6].temperatureMin).ToString() + "° / "
+                                                             + ((int)weatherData.daily.data[6].temperatureMax).ToString() + "°";
+                    MainWindow.main.SatWeather_Image.Source = new BitmapImage(new Uri(weatherImagePath + weatherData.daily.data[6].icon + @".png", UriKind.Relative));
+
+                    //day1 is Sun
+                    MainWindow.main.SunWeather_Label.Content = "";
+                    MainWindow.main.SunWeather_Image.Source = null;
+                }
             }
         }
     }

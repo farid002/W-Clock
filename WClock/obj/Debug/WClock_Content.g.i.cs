@@ -8,13 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/cloudy.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/cloudysunny.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/lightning.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/lightningrainy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/lowrainy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/rainy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/snowy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imgs/weather-icons/sunny.png")]
 
 
