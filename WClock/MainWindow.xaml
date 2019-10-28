@@ -12,6 +12,7 @@
     </WindowChrome.WindowChrome>
 
     <Grid Width="600" Height="600">
+
         <Border CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="0.5,0.5">
             <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="5" Background="#FF110D38">
                 <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="70" Background="#FF0E3369">
@@ -21,6 +22,8 @@
                 </Border>
             </Border>
         </Border>
+
+
         <Line
                                 X1="358" Y1="300"  
                                 X2="600" Y2="300"  
@@ -383,6 +386,93 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Border x:Name="OptionsBorder" CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="-7.406,0.6" Visibility="Hidden" Opacity="0.98" Width="0" Height="0" Padding="0" Margin="511,0,0,511">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFF61111" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TabControl SelectionChanged="TabControl_SelectionChanged" Margin="84.8,141.8,84.8,127.8">
+                <TabControl.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FF565656" Offset="0.333"/>
+                    </LinearGradientBrush>
+                </TabControl.Background>
+                <TabItem Header="Background">
+                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        <RadioButton x:Name="Blue" Content="Blue" Checked="Blue_Checked" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Red" Content="Red" Checked="Red_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="-56" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Green" Content="Green" Checked="Green_Checked" Canvas.Top="-36" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Fenerbahce" Content="Fenerbahce" Checked="Fenerbahce_Checked" Canvas.Left="-27" Canvas.Top="-16"></RadioButton>
+                        <Button x:Name="Apply" Canvas.Left="-27" Canvas.Top="100" Height="22" Width="67" Content="Apply" Click="Apply_Click" >
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard  >
+                                            <DoubleAnimation Storyboard.TargetName="OptionsBorder" 
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Width"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                            <DoubleAnimation Storyboard.TargetName="OptionsBorder"    
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Height"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                            <ThicknessAnimation Storyboard.TargetName="OptionsBorder"
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Margin"                                     
+                                             To="511,0,0,511"
+                                             AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                            </Button.Triggers>
+                        </Button>
+                    </Canvas>
+
+                </TabItem>
+                <TabItem Header="Location">
+
+                </TabItem>
+                <TabItem Header="Unit">
+
+                </TabItem>
+            </TabControl>
+
+        </Border>
+
+        <Button x:Name="OptionButton" Width="100" Height="30" Margin="490,10,10,560" Click="OptionButton_Click">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard  >
+                            <DoubleAnimation Storyboard.TargetName="OptionsBorder" 
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Width"
+                                             To="600"
+                                             AutoReverse="False"/>
+                            <DoubleAnimation Storyboard.TargetName="OptionsBorder"    
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Height"
+                                             To="600"
+                                             AutoReverse="False"/>
+                            <ThicknessAnimation Storyboard.TargetName="OptionsBorder"
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Margin"                                     
+                                             To="0,0,0,0"
+                                             AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Button.Triggers>
+        </Button>
     </Grid>
 
 </Window>

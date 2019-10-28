@@ -156,11 +156,49 @@ namespace WClock
                 SatWeather_Label.ToolTip = "Minimum and Maximum degrees of the day in Celcius.";
         }
 
+<<<<<<< HEAD
         private void SunWeather_Label_MouseEnter(object sender, MouseEventArgs e)
         {
             if (!DateTime.Now.DayOfWeek.Equals("Sunday"))
                 SunWeather_Label.ToolTip = "Minimum and Maximum degrees of the day in Celcius.";
         }
 
+=======
+        private void OptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            OptionsBorder.Visibility = Visibility.Visible;
+            
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Blue_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Red_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Green_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Fenerbahce_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Apply_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+>>>>>>> origin/Joshgun
     }
 }
