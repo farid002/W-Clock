@@ -156,14 +156,12 @@ namespace WClock
                 SatWeather_Label.ToolTip = "Minimum and Maximum degrees of the day in Celcius.";
         }
 
-<<<<<<< HEAD
         private void SunWeather_Label_MouseEnter(object sender, MouseEventArgs e)
         {
             if (!DateTime.Now.DayOfWeek.Equals("Sunday"))
                 SunWeather_Label.ToolTip = "Minimum and Maximum degrees of the day in Celcius.";
         }
 
-=======
         private void OptionButton_Click(object sender, RoutedEventArgs e)
         {
             OptionsBorder.Visibility = Visibility.Visible;
@@ -199,6 +197,5 @@ namespace WClock
         {
             
         }
->>>>>>> origin/Joshgun
     }
 }
