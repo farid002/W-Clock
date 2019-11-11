@@ -61,7 +61,7 @@ namespace WClock
             using (WebClient web = new WebClient())
             {
                 //Getting path for API
-                string url = string.Format("https://api.darksky.net/forecast/c10099d11622db97e74edf8cbe651e7a/41.101417,29.029217?exclude=minutely,hourly,alerts&units=si&time=auto");
+                string url = string.Format("https://api.darksky.net/forecast/c10099d11622db97e74edf8cbe651e7a/" + MainWindow.main.location_string + "?exclude=minutely,hourly,alerts&units=si&time=auto");
                 var json = web.DownloadString(url);
 
                 //Getting data from API as an object

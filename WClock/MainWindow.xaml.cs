@@ -30,6 +30,8 @@ namespace WClock
         public List<outlook.AppointmentItem> satList = new List<outlook.AppointmentItem>();
         public List<outlook.AppointmentItem> sunList = new List<outlook.AppointmentItem>();
 
+        public string location_string = "41.0082,28.9784"; //set location as Istanbul by default
+
         WeatherInfo weatherInfo = new WeatherInfo();
         MyCalendar outlookCalendar = new MyCalendar();
 
@@ -73,7 +75,7 @@ namespace WClock
             currentWeekDay = DateTime.Now.DayOfWeek.ToString();
             currentMonthDay = DateTime.Now.Day;
             currentYear = DateTime.Now.Year;
-
+            
             CurrentTime_Label.Content = currentHour.ToString("D2") + ":" + currentMinute.ToString("D2") + ":" + currentSec.ToString("D2");
             updateWeekTick();
         }
@@ -162,12 +164,16 @@ namespace WClock
                 SunWeather_Label.ToolTip = "Minimum and Maximum degrees of the day in Celcius.";
         }
 
-        private void OptionButton_Click(object sender, RoutedEventArgs e)
+        private void Options_Button_Click(object sender, RoutedEventArgs e)
         {
             OptionsBorder.Visibility = Visibility.Visible;
             
         }
+        private void Authors_Button_Click(object sender, RoutedEventArgs e)
+        {
+            OptionsBorder.Visibility = Visibility.Visible;
 
+        }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -192,10 +198,50 @@ namespace WClock
         {
 
         }
-
-        private void Apply_Click(object sender, RoutedEventArgs e)
+        //Setting the locations
+        private void Baku_Checked(object sender, RoutedEventArgs e)
         {
-            
+            location_string = "40.4093,49.8671";
+        }
+
+        private void Berlin_Checked(object sender, RoutedEventArgs e)
+        {
+            location_string = "52.5200,13.4050";
+        }
+
+        private void Istanbul_Checked(object sender, RoutedEventArgs e)
+        {
+            location_string = "41.0082,28.9784";
+        }
+
+        private void London_Checked(object sender, RoutedEventArgs e)
+        {
+            location_string = "51.5074,0.1278";
+        }
+
+        private void Moscow_Checked(object sender, RoutedEventArgs e)
+        {
+            location_string = "55.7558,37.6173";
+        }
+
+        private void NewYork_Checked(object sender, RoutedEventArgs e)
+        {
+            location_string = "40.730610,-73.935242";
+        }
+
+        private void Paris_Checked(object sender, RoutedEventArgs e)
+        {
+            location_string = "48.8566,2.3522";
+        }
+
+        private void LocationApply_Button_Click(object sender, RoutedEventArgs e)
+        {
+            weatherInfo.getWeather();
+        }
+
+        private void BackgroundApply_Button_Click(object sender, RoutedEventArgs e)
+        {
+            weatherInfo.getWeather();
         }
     }
 }

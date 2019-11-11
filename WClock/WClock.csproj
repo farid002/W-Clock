@@ -173,5 +173,11 @@
   <ItemGroup>
     <Resource Include="imgs\weather-icons\partly-cloudy-night.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\other\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\other\authors.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

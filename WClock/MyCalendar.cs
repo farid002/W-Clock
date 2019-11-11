@@ -17,7 +17,7 @@ namespace WClock
             outlook._NameSpace ns = app.GetNamespace("MAPI");
             outlook.MAPIFolder mAPIFolder = ns.GetDefaultFolder(outlook.OlDefaultFolders.olFolderCalendar);
 
-            
+            //add items into lists and listbox elements
             foreach (outlook.AppointmentItem item in mAPIFolder.Items)
             {
                 if (item.Start.Day == currDateTime.Day)
@@ -353,6 +353,28 @@ namespace WClock
             appoinment.Body = "Somethingg";
             appoinment.Importance = outlook.OlImportance.olImportanceNormal;
             appoinment.Save();   //  =  ((outlook._AppointmentItem)appoinment).Save();
+        }
+
+        private void deleteAppointment()
+        {
+            DateTime currDateTime = DateTime.Now.Date;
+
+            outlook.AppointmentItem selectedItem = new outlook.AppointmentItem();
+            MainWindow.main.monApp_listbox.SelectedItem.ToString();
+
+
+
+            outlook._Application app = new outlook.Application();
+            outlook._NameSpace ns = app.GetNamespace("MAPI");
+            outlook.MAPIFolder mAPIFolder = ns.GetDefaultFolder(outlook.OlDefaultFolders.olFolderCalendar);
+            
+            foreach(outlook.AppointmentItem item in mAPIFolder.Items)
+            {
+                if (item.Equals(selectedItem))
+                {
+                    item.Delete();
+                }
+            }
         }
     }
 }

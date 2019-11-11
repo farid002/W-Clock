@@ -386,7 +386,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Border x:Name="OptionsBorder" CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="-7.406,0.6" Visibility="Hidden" Opacity="0.98" Width="0" Height="0" Padding="0" Margin="511,0,0,511">
+        <Border x:Name="OptionsBorder" CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="-7.406,0.6" Visibility="Visible" Opacity="0.98" Width="0" Height="0" Padding="0" Margin="511,0,0,511">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Aqua" Offset="0"/>
@@ -408,7 +408,7 @@
                         <RadioButton x:Name="Red" Content="Red" Checked="Red_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="-56" Canvas.Left="-27"/>
                         <RadioButton x:Name="Green" Content="Green" Checked="Green_Checked" Canvas.Top="-36" Canvas.Left="-27"/>
                         <RadioButton x:Name="Fenerbahce" Content="Fenerbahce" Checked="Fenerbahce_Checked" Canvas.Left="-27" Canvas.Top="-16"></RadioButton>
-                        <Button x:Name="Apply" Canvas.Left="-27" Canvas.Top="100" Height="22" Width="67" Content="Apply" Click="Apply_Click" >
+                        <Button x:Name="BackgroundApply_Button" Canvas.Left="-27" Canvas.Top="100" Height="22" Width="67" Content="Apply" Click="BackgroundApply_Button_Click" >
                             <Button.Triggers>
                                 <EventTrigger RoutedEvent="Button.Click">
                                     <BeginStoryboard>
@@ -438,7 +438,43 @@
 
                 </TabItem>
                 <TabItem Header="Location">
+                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
 
+                        <RadioButton x:Name="Baku" Content="Baku" Checked="Baku_Checked" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Berlin" Content="Berlin" Checked="Berlin_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="-56" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Istanbul" Content="Istanbul" Checked="Istanbul_Checked" Canvas.Top="-36" Canvas.Left="-27"/>
+                        <RadioButton x:Name="London" Content="London" Checked="London_Checked" Canvas.Left="-27" Canvas.Top="-16"></RadioButton>
+                        <RadioButton x:Name="Moscow" Content="Moscow" Checked="Moscow_Checked" Height="15" Canvas.Top="6" Width="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="NewYork" Content="NewYork" Checked="NewYork_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="26" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Paris" Content="Paris" Checked="Paris_Checked" Canvas.Top="46" Canvas.Left="-27"/>
+
+                        <Button x:Name="LocationApply_Button" Canvas.Left="-27" Canvas.Top="100" Height="22" Width="67" Content="Apply" Click="LocationApply_Button_Click" >
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard  >
+                                            <DoubleAnimation Storyboard.TargetName="OptionsBorder" 
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Width"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                            <DoubleAnimation Storyboard.TargetName="OptionsBorder"    
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Height"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                            <ThicknessAnimation Storyboard.TargetName="OptionsBorder"
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Margin"                                     
+                                             To="511,0,0,511"
+                                             AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                            </Button.Triggers>
+                        </Button>
+                    </Canvas>
                 </TabItem>
                 <TabItem Header="Unit">
 
@@ -447,7 +483,78 @@
 
         </Border>
 
-        <Button x:Name="OptionButton" Height="30" Margin="509,10,57,560" Click="OptionButton_Click">
+        <Button x:Name="Options_Button" Margin="477,5,69,548" Click="Options_Button_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Background>
+                <ImageBrush ImageSource="imgs/other/options.png" Stretch="UniformToFill"/>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard  >
+                            <DoubleAnimation Storyboard.TargetName="OptionsBorder" 
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Width"
+                                             To="600"
+                                             AutoReverse="False"/>
+                            <DoubleAnimation Storyboard.TargetName="OptionsBorder"    
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Height"
+                                             To="600"
+                                             AutoReverse="False"/>
+                            <ThicknessAnimation Storyboard.TargetName="OptionsBorder"
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Margin"                                     
+                                             To="0,0,0,0"
+                                             AutoReverse="False"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Button.Triggers>
+        </Button>
+        
+        <Button x:Name="Authors_Button" Margin="536,57,10,497" Click="Authors_Button_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkGoldenrod"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Background>
+                <ImageBrush ImageSource="imgs/other/authors.jpg" Stretch="UniformToFill"/>
+            </Button.Background>
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
