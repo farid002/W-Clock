@@ -13,48 +13,48 @@
 
     <Grid Width="600" Height="600">
 
-        <Border CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="0.5,0.5">
-            <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="5" Background="#FF110D38">
-                <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="70" Background="#FF0E3369">
-                    <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="50" Background="#FF110D38">
-                        <Border CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="110" Background="#FF110D38"/>
+        <Border x:Name="Border_1" CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="0.5,0.5">
+            <Border x:Name="Border_2" CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="5" Background="#FF110D38">
+                <Border x:Name="Border_3" CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="70" Background="#FF0E3369">
+                    <Border x:Name="Border_4" CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="50" Background="#FF110D38">
+                        <Border x:Name="Border_5" CornerRadius="360" BorderBrush="Aqua" BorderThickness="2" Margin="110" Background="#FF110D38"/>
                     </Border>
                 </Border>
             </Border>
         </Border>
         <Label x:Name="Location_Label" Margin="258,249,255,321" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Istanbul" FontSize="10" Foreground="#FF8C8B8B" />
 
-        <Line
+        <Line x:Name="InsideLine_1"
                                 X1="358" Y1="300"  
                                 X2="600" Y2="300"  
                                 Stroke="Aqua"  
                                 StrokeThickness="2" Margin="-1,0,1,0" />
-        <Line
+        <Line x:Name="InsideLine_2"
                                 X1="340" Y1="262"  
                                 X2="490" Y2="70"  
                                 Stroke="Aqua"  
                                 StrokeThickness="2" />
-        <Line
+        <Line x:Name="InsideLine_3"
                                 X1="290" Y1="245"  
                                 X2="240" Y2="10"  
                                 Stroke="Aqua"  
                                 StrokeThickness="2" Margin="0,-1,0,1" />
-        <Line
+        <Line x:Name="InsideLine_4"
                                 X1="248" Y1="275"  
                                 X2="30" Y2="170"  
                                 Stroke="Aqua"  
                                 StrokeThickness="2" Margin="1,1,-1,-1" />
-        <Line
+        <Line x:Name="InsideLine_5"
                                 X1="248" Y1="325"  
                                 X2="30" Y2="420"  
                                 Stroke="Aqua"  
                                 StrokeThickness="2" Margin="0,-1,0,1" />
-        <Line
+        <Line x:Name="InsideLine_6"
                                 X1="286" Y1="355"  
                                 X2="230" Y2="580"  
                                 Stroke="Aqua"  
                                 StrokeThickness="2" />
-        <Line
+        <Line x:Name="InsideLine_7"
                                 X1="335" Y1="345"  
                                 X2="480" Y2="540"  
                                 Stroke="Aqua"  
@@ -101,9 +101,10 @@
                                 X2="225" Y2="205"  
                                 Stroke="Red"  
                                 StrokeThickness="4" Margin="-37,-43,37,43" Visibility="Hidden" />
-        <Label x:Name="CurrentTime_Label" Margin="258,268,255,302" Foreground="White" Background="#FF110D38" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="16:00" Height="40" FontSize="20"/>
+
+        <Label x:Name="CurrentTime_Label" Margin="258,268,255,302" Foreground="White" Background="Transparent" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="16:00:54" Height="40" FontSize="20"/>
         <Image x:Name="CurrWeather_Image" Margin="305,298,255,262" Width="40" Height="40" RenderTransformOrigin="0.26,0.285"/>
-        <Label Margin="127,432,373,138" Width="100" Height="40" Content="FRI" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="Fri_Label" Margin="127,432,373,138" Width="100" Height="40" Content="FRI" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -113,7 +114,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Margin="128,137,372,433" Width="100" Height="40" Content="SUN" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="Sun_Label" Margin="128,137,372,433" Width="100" Height="40" Content="SUN" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -123,7 +124,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Margin="58,281,442,289" Width="100" Height="40" Content="SAT" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="Sat_Label" Margin="58,281,442,289" Width="100" Height="40" Content="SAT" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -133,7 +134,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Margin="289,474,211,96" Width="100" Height="40" Content="THU" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="Thu_Label" Margin="289,474,211,96" Width="100" Height="40" Content="THU" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -143,7 +144,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Margin="423,371,77,199" Width="100" Height="40" Content="WED" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" >
+        <Label x:Name="Wed_Label" Margin="423,371,77,199" Width="100" Height="40" Content="WED" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" >
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -153,7 +154,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Margin="302,101,198,469" Width="100" Height="40" Content="MON" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="Mon_Label" Margin="302,101,198,469" Width="100" Height="40" Content="MON" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -163,7 +164,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label Margin="425,204,75,366" Width="100" Height="40" Content="TUE" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
+        <Label x:Name="Tue_Label" Margin="425,204,75,366" Width="100" Height="40" Content="TUE" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -393,15 +394,23 @@
                     <GradientStop Color="#FF110D38" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <TabControl SelectionChanged="TabControl_SelectionChanged" Margin="84.8,141.8,84.8,127.8">
-                <TabControl.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="White" Offset="1"/>
-                        <GradientStop Color="#FF565656" Offset="0.333"/>
-                    </LinearGradientBrush>
-                </TabControl.Background>
-                <TabItem Header="Background">
+            <TabControl SelectionChanged="TabControl_SelectionChanged" Margin="84.8,137.8,84.8,131.8" Background="{x:Null}" Foreground="#FF662A2A" BorderBrush="{x:Null}">
+                <TabItem Header="Background" Width="140" BorderBrush="White" Foreground="Black">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FF110D38" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <TabItem.Style>
+                        <Style TargetType="{x:Type TabItem}">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected"  Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TabItem.Style>
                     <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
 
                         <RadioButton x:Name="Blue" Content="Blue" Checked="Blue_Checked" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
@@ -437,7 +446,13 @@
                     </Canvas>
 
                 </TabItem>
-                <TabItem Header="Location">
+                <TabItem Header="Location" Width="140" Foreground="#FF110D38">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FF110D38" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
                     <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
 
                         <RadioButton x:Name="Baku" Content="Baku" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
@@ -476,7 +491,50 @@
                         </Button>
                     </Canvas>
                 </TabItem>
-                <TabItem Header="Unit">
+                <TabItem Header="Fonts" Width="140" Foreground="Black">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FF110D38" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        <RadioButton x:Name="Calibri" Content="Calibri" Checked="Calibri_Checked" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Century_Gothic" Content="Century Gothic" Checked="Century_Gothic_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="-56" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Goudy_Old_Style" Content="Goudy Old Style" Checked="Goudy_Old_Style_Checked" Canvas.Top="-36" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Brush_Script_MT" Content="Brush Script MT" Checked="Brush_Script_MT_Checked" Canvas.Left="-27" Canvas.Top="-16"></RadioButton>
+                        <RadioButton x:Name="papyrus" Content="papyrus" Checked="Papyrus_Checked" Canvas.Left="-27" Canvas.Top="4"></RadioButton>
+                        <RadioButton x:Name="Ink_Free" Content="Ink Free" Checked="Ink_Free_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="26" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Default" Content="Default" Checked="Default_Checked" Canvas.Top="46" Canvas.Left="-27"/>
+
+                        <Button x:Name="FontApply_Button" Canvas.Left="-27" Canvas.Top="100" Height="22" Width="67" Content="Apply" Click="FontApply_Button_Click" >
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard  >
+                                            <DoubleAnimation Storyboard.TargetName="OptionsBorder" 
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Width"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                            <DoubleAnimation Storyboard.TargetName="OptionsBorder"    
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Height"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                            <ThicknessAnimation Storyboard.TargetName="OptionsBorder"
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Margin"                                     
+                                             To="511,0,0,511"
+                                             AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                            </Button.Triggers>
+                        </Button>
+                    </Canvas>
 
                 </TabItem>
             </TabControl>
@@ -630,6 +688,12 @@
                 </EventTrigger>
 
             </Button.Triggers>
+        </Button>
+        <Button x:Name="CloseButton" Content="X"  HorizontalAlignment="Left" Margin="532,-2,0,0" VerticalAlignment="Top" Width="54" Click="CloseButton_Click" BorderBrush="{x:Null}" Foreground="Red" FontWeight="Bold" Height="47" FontSize="36">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+
         </Button>
     </Grid>
 
