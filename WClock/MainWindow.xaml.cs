@@ -17,6 +17,8 @@ using System.Windows.Threading;
 using System.Net;
 using System.Web.Script.Serialization;
 using outlook = Microsoft.Office.Interop.Outlook;
+using System.Windows.Automation.Peers;
+using System.Windows.Automation.Provider;
 
 namespace WClock
 {
@@ -41,6 +43,7 @@ namespace WClock
         int currentMinute;
         int currentSec;
         string currentWeekDay;
+        TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time"); //russia and turkey has the same time
 
         public static MainWindow main;
 
@@ -69,14 +72,17 @@ namespace WClock
         //update timer box during each tick
         private void tickEvent(object sender, EventArgs e)
         {
-            currentSec = DateTime.Now.Second;
-            currentMinute = DateTime.Now.Minute;
-            currentHour = DateTime.Now.Hour;
-            currentWeekDay = DateTime.Now.DayOfWeek.ToString();
-            currentMonthDay = DateTime.Now.Day;
-            currentYear = DateTime.Now.Year;
+            var currentDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, timeZone);
             
-            CurrentTime_Label.Content = currentHour.ToString("D2") + ":" + currentMinute.ToString("D2") + ":" + currentSec.ToString("D2");
+           
+            currentSec = currentDate.Second;
+            currentMinute = currentDate.Minute;
+            currentHour = currentDate.Hour;
+            currentWeekDay = currentDate.DayOfWeek.ToString();
+            currentMonthDay = currentDate.Day;
+            currentYear = currentDate.Year;
+            
+            CurrentTime_Label.Content = currentHour.ToString("D2") + ":" + currentMinute.ToString("D2");
             updateWeekTick();
         }
 
@@ -166,12 +172,32 @@ namespace WClock
 
         private void Options_Button_Click(object sender, RoutedEventArgs e)
         {
+            //if options button is clicked, automatically closes authors window
+            ButtonAutomationPeer peerSent = new ButtonAutomationPeer(AuthorsClose_Button);
+            IInvokeProvider invokeProvSent = peerSent.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+            invokeProvSent.Invoke();
+
             OptionsBorder.Visibility = Visibility.Visible;
             
         }
         private void Authors_Button_Click(object sender, RoutedEventArgs e)
         {
-            OptionsBorder.Visibility = Visibility.Visible;
+            //if authors button is clicked, automatically apply changes for background tab of options
+            ButtonAutomationPeer peerSent = new ButtonAutomationPeer(BackgroundApply_Button);
+            IInvokeProvider invokeProvSent = peerSent.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+            invokeProvSent.Invoke();
+
+            //if authors button is clicked, automatically apply changes for location tab of options
+            peerSent = new ButtonAutomationPeer(LocationApply_Button);
+            invokeProvSent = peerSent.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+            invokeProvSent.Invoke();
+
+            //if authors button is clicked, automatically apply changes for location tab of options
+            //peerSent = new ButtonAutomationPeer(FontApply_Button);
+            //invokeProvSent = peerSent.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+            //invokeProvSent.Invoke();
+
+            AuthorsBorder.Visibility = Visibility.Visible;
 
         }
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -199,49 +225,67 @@ namespace WClock
 
         }
         //Setting the locations
-        private void Baku_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "40.4093,49.8671";
-        }
-
-        private void Berlin_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "52.5200,13.4050";
-        }
-
-        private void Istanbul_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "41.0082,28.9784";
-        }
-
-        private void London_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "51.5074,0.1278";
-        }
-
-        private void Moscow_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "55.7558,37.6173";
-        }
-
-        private void NewYork_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "40.730610,-73.935242";
-        }
-
-        private void Paris_Checked(object sender, RoutedEventArgs e)
-        {
-            location_string = "48.8566,2.3522";
-        }
-
         private void LocationApply_Button_Click(object sender, RoutedEventArgs e)
         {
+            if(Paris.IsChecked == true)
+            {
+                location_string = "48.8566,2.3522";
+                Location_Label.Content = "Paris";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("Romance Standard Time");
+            }
+            else if(Baku.IsChecked == true)
+            {
+                location_string = "40.4093,49.8671";
+                Location_Label.Content = "Baku";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("Azerbaijan Standard Time");
+            }
+            else if(Berlin.IsChecked == true)
+            {
+                location_string = "52.5200,13.4050";
+                Location_Label.Content = "Berlin";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("W.Europe Standard Time");
+            }
+            else if(Istanbul.IsChecked == true)
+            {
+                location_string = "41.0082,28.9784";
+                Location_Label.Content = "Istanbul";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time");
+            }
+            else if(NewYork.IsChecked == true)
+            {
+                location_string = "40.730610,-73.935242";
+                Location_Label.Content = "New York";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+            }
+            else if(London.IsChecked == true)
+            {
+                location_string = "51.5074,0.1278";
+                Location_Label.Content = "London";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
+            }
+            else if(Moscow.IsChecked == true)
+            {
+                location_string = "55.7558,37.6173";
+                Location_Label.Content = "Moscow";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time");
+            }
+            else
+            {
+                location_string = "41.0082,28.9784"; //istanbul as default
+                Location_Label.Content = "Istanbul";
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById("GTB Standard Time");
+            }
             weatherInfo.getWeather();
         }
 
         private void BackgroundApply_Button_Click(object sender, RoutedEventArgs e)
         {
             weatherInfo.getWeather();
+        }
+
+        private void AuthorsClose_Button_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -22,7 +22,7 @@
                 </Border>
             </Border>
         </Border>
-
+        <Label x:Name="Location_Label" Margin="258,249,255,321" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Istanbul" FontSize="10" Foreground="#FF8C8B8B" />
 
         <Line
                                 X1="358" Y1="300"  
@@ -101,7 +101,7 @@
                                 X2="225" Y2="205"  
                                 Stroke="Red"  
                                 StrokeThickness="4" Margin="-37,-43,37,43" Visibility="Hidden" />
-        <Label x:Name="CurrentTime_Label" Margin="258,268,255,302" Foreground="White" Background="#FF110D38" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="16:00:54" Height="40" FontSize="20"/>
+        <Label x:Name="CurrentTime_Label" Margin="258,268,255,302" Foreground="White" Background="#FF110D38" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="16:00" Height="40" FontSize="20"/>
         <Image x:Name="CurrWeather_Image" Margin="305,298,255,262" Width="40" Height="40" RenderTransformOrigin="0.26,0.285"/>
         <Label Margin="127,432,373,138" Width="100" Height="40" Content="FRI" FontSize="20" Background="Transparent" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}">
             <Label.RenderTransform>
@@ -173,7 +173,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Label x:Name="currWeather_Label" Height="35" BorderBrush="Transparent"  Margin="258,303,288,262" Background="Transparent" Foreground="White" FontSize="20"/>
+        <Label x:Name="currWeather_Label" Height="35" BorderBrush="Transparent"  Margin="258,298,288,267" Background="Transparent" Foreground="White" FontSize="20"/>
         <StackPanel>
             <ListBox x:Name="monApp_listbox" HorizontalAlignment="Left" Height="65" Margin="291,20,0,0" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Foreground="#FFFCFCFC">
                 <ListBox.RenderTransform>
@@ -440,13 +440,13 @@
                 <TabItem Header="Location">
                     <Canvas HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                        <RadioButton x:Name="Baku" Content="Baku" Checked="Baku_Checked" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
-                        <RadioButton x:Name="Berlin" Content="Berlin" Checked="Berlin_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="-56" Canvas.Left="-27"/>
-                        <RadioButton x:Name="Istanbul" Content="Istanbul" Checked="Istanbul_Checked" Canvas.Top="-36" Canvas.Left="-27"/>
-                        <RadioButton x:Name="London" Content="London" Checked="London_Checked" Canvas.Left="-27" Canvas.Top="-16"></RadioButton>
-                        <RadioButton x:Name="Moscow" Content="Moscow" Checked="Moscow_Checked" Height="15" Canvas.Top="6" Width="46" Canvas.Left="-27"/>
-                        <RadioButton x:Name="NewYork" Content="NewYork" Checked="NewYork_Checked" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="26" Canvas.Left="-27"/>
-                        <RadioButton x:Name="Paris" Content="Paris" Checked="Paris_Checked" Canvas.Top="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Baku" Content="Baku" Height="15" Canvas.Top="-76" Width="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Berlin" Content="Berlin" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="-56" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Istanbul" Content="Istanbul" Canvas.Top="-36" Canvas.Left="-27"/>
+                        <RadioButton x:Name="London" Content="London" Canvas.Left="-27" Canvas.Top="-16"></RadioButton>
+                        <RadioButton x:Name="Moscow" Content="Moscow" Height="15" Canvas.Top="6" Width="46" Canvas.Left="-27"/>
+                        <RadioButton x:Name="NewYork" Content="NewYork" VerticalAlignment="Center" HorizontalAlignment="Right" Canvas.Top="26" Canvas.Left="-27"/>
+                        <RadioButton x:Name="Paris" Content="Paris" Canvas.Top="46" Canvas.Left="-27"/>
 
                         <Button x:Name="LocationApply_Button" Canvas.Left="-27" Canvas.Top="100" Height="22" Width="67" Content="Apply" Click="LocationApply_Button_Click" >
                             <Button.Triggers>
@@ -482,6 +482,57 @@
             </TabControl>
 
         </Border>
+
+        <Border x:Name="AuthorsBorder" CornerRadius="360"  BorderBrush="Aqua" BorderThickness="3" RenderTransformOrigin="-7.406,0.6" Visibility="Visible" Opacity="100" Width="0" Height="0" Padding="0" Margin="511,0,0,511">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Aqua" Offset="0"/>
+                    <GradientStop Color="#FF110D38" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel>
+                <Label Content="W'Clock" Margin="117.8,50,114.8,393.8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="40" FontFamily="Wide Latin"/>
+                <Label Content="           An Applicaiton providing Weather information, Week clock,&#xD;&#xA;                       Digital clock for specific cities in the world, &#xD;&#xA;          Events appearing on the outlook account for the next 7 days." Height="100" Margin="0,-650,9.6,0" ScrollViewer.CanContentScroll="True" FontSize="18" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" RenderTransformOrigin="0.5,0.5" />
+                <Label Content="...Authors..." Height="46" Margin="210,-400,210,100" ScrollViewer.CanContentScroll="True" FontSize="18" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" FontFamily="Wide Latin" HorizontalAlignment="Center" VerticalAlignment="Center" Width="190" />
+                <Label Content="Farid Huseynov &amp; Joshgun Rzabayli" Height="40" Margin="0,-350,0,100" ScrollViewer.CanContentScroll="True" FontSize="18" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Width="317" />
+                <Label Content="                 Istanbul Technical University&#xD;&#xA;Computer Engineering &amp; Informatics Department" Height="100" Margin="89,-250,92.6,100" ScrollViewer.CanContentScroll="True" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="412" TextOptions.TextHintingMode="Fixed" />
+                <Image Height="86" Margin="236,-180,235.6,0" Source="imgs/other/itu.png" >
+                    <Image.OpacityMask>
+                        <ImageBrush ImageSource="imgs/other/itu.png"/>
+                    </Image.OpacityMask>
+                </Image>
+                <Label Content="Some Rights Reserved © 2019" Height="40" Margin="0,0,0,100" ScrollViewer.CanContentScroll="True" FontSize="18" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="317" Foreground="#FFC3ABAB" />
+
+                <Button x:Name="AuthorsClose_Button" Height="30" Width="30" Content="X" Margin="0,-150,0,0" Background="#FF859DF0" FontWeight="Bold" FontSize="20" Click="AuthorsClose_Button_Button_Click">
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            <BeginStoryboard>
+                                <Storyboard  >
+                                    <DoubleAnimation Storyboard.TargetName="AuthorsBorder" 
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Width"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                    <DoubleAnimation Storyboard.TargetName="AuthorsBorder"    
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Height"
+                                             To="0"
+                                             AutoReverse="False"/>
+                                    <ThicknessAnimation Storyboard.TargetName="AuthorsBorder"
+                                             Duration="0:0:0:0.20"
+                                             Storyboard.TargetProperty="Margin"                                     
+                                             To="511,0,0,511"
+                                             AutoReverse="False"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </Button.Triggers>
+                </Button>
+            </StackPanel>
+
+        </Border>
+
 
         <Button x:Name="Options_Button" Margin="477,5,69,548" Click="Options_Button_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
             <Button.Style>
@@ -531,7 +582,7 @@
 
             </Button.Triggers>
         </Button>
-        
+
         <Button x:Name="Authors_Button" Margin="536,57,10,497" Click="Authors_Button_Click" Foreground="{x:Null}" BorderBrush="{x:Null}">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -559,17 +610,17 @@
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
                         <Storyboard  >
-                            <DoubleAnimation Storyboard.TargetName="OptionsBorder" 
+                            <DoubleAnimation Storyboard.TargetName="AuthorsBorder" 
                                              Duration="0:0:0:0.20"
                                              Storyboard.TargetProperty="Width"
                                              To="600"
                                              AutoReverse="False"/>
-                            <DoubleAnimation Storyboard.TargetName="OptionsBorder"    
+                            <DoubleAnimation Storyboard.TargetName="AuthorsBorder"    
                                              Duration="0:0:0:0.20"
                                              Storyboard.TargetProperty="Height"
                                              To="600"
                                              AutoReverse="False"/>
-                            <ThicknessAnimation Storyboard.TargetName="OptionsBorder"
+                            <ThicknessAnimation Storyboard.TargetName="AuthorsBorder"
                                              Duration="0:0:0:0.20"
                                              Storyboard.TargetProperty="Margin"                                     
                                              To="0,0,0,0"
